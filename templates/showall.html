@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %}
+    QuizMe | Results
+{% endblock %}
+
+
+{% block body %}
+
+<div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <label style=" font-size: 1.5rem;">Results</label>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body table-responsive p-0">
+          <table class="table table-hover text-nowrap">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Points</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for marks in list %}
+              <tr>
+                <td>{{marks.name}}</td>
+                <td>{{marks.email}}</td>
+                <td>{{marks.grade}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+    </div>
+  </div>
+  <!-- /.row -->
+
+{% endblock %}
+
+
+{% block navbar%}
+<li class="nav-item">
+  <a href="/adminq" class="nav-link">
+    <p>
+      See Current Quiz
+    </p>
+  </a>
+</li>
+<li class="nav-item">
+  <a href="/add" class="nav-link">
+    <p>
+      Add Question
+    </p>
+  </a>
+</li>
+<li class="nav-item">
+  <a href="/remove" class="nav-link">
+    <p>
+      Remove Question
+    </p>
+  </a>
+</li>
+  <a href="/showall" class="nav-link">
+    <p>
+      Check All Results
+    </p>
+  </a>
+</li>
+<li class="nav-item">
+  <a href="/logout" class="nav-link">
+    <p>
+      Logout
+    </p>
+  </a>
+</li>
+{% endblock %}

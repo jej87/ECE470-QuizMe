@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block title %}
+ QuizMe | Take Quiz
+{% endblock %}
+
+{% block body %}
+<!-- Main content -->
+<div
+    style="font-size: 50px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+    UM 101
+</div>
+<hr>
+
+    <section>
+        {% for list in array%}
+        <div style="font-size: 30px;">
+            
+            <b>{{list.qnum}})</b>
+            <b>{{list.question}}</b>
+        </div>
+
+        <form id="quickForm" action="/submit" method="POST" style="height: 2.5rem; font-size: 1rem;left: 20px;">
+            <br>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="mcq{{list.qnum}}" id="choicea" value='{{list.choicea}}' required>
+                <label class="form-check-label" for="flexRadioDefault1">
+                    {{list.choicea}}
+                </label>
+            </div>
+        
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="mcq{{list.qnum}}" id="choiceb"  value='{{list.choiceb}}'>
+                <label class="form-check-label" for="flexRadioDefault2">
+                    {{list.choiceb}}
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="mcq{{list.qnum}}" id="choicec"  value='{{list.choicec}}'>
+                <label class="form-check-label" for="flexRadioDefault2">
+                    {{list.choicec}}
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="mcq{{list.qnum}}" id="choiced"  value='{{list.choiced}}'>
+                <label class="form-check-label" for="flexRadioDefault2">
+                    {{list.choiced}}
+                </label>
+              </div>
+              {% endfor %}
+            </div>
+            <br>
+        </form>
+    </section>
+</div> 
+
+
+{% endblock %}
+
+{% block navbar%}
+<li class="nav-item">
+    <a href="/adminq" class="nav-link">
+      <p>
+        See Current Quiz
+      </p>
+    </a>
+  </li>
+<li class="nav-item">
+    <a href="/add" class="nav-link">
+      <p>
+        Add Question
+      </p>
+    </a>
+  </li>
+<li class="nav-item">
+    <a href="/remove" class="nav-link">
+      <p>
+        Remove Question
+      </p>
+    </a>
+  </li>
+    <a href="/showall" class="nav-link">
+      <p>
+        Check All Results
+      </p>
+    </a>
+  </li>
+<li class="nav-item">
+    <a href="/logout" class="nav-link">
+      <p>
+        Logout
+      </p>
+    </a>
+  </li>
+{% endblock %}

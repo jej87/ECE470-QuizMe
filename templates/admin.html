@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}
+  QuizMe | Admin Portal
+{% endblock %}
+
+{% block body %}
+<div style="font-size: 50px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+   Welcome Admin!
+</div>
+<hr>
+Here you can add new questions and see the score of all the students.
+{% endblock %}
+
+
+{% block navbar%}
+<li class="nav-item">
+    <a href="/adminq" class="nav-link">
+      <p>
+        See Current Quiz
+      </p>
+    </a>
+  </li>
+<li class="nav-item">
+    <a href="/add" class="nav-link">
+      <p>
+        Add Question
+      </p>
+    </a>
+  </li>
+<li class="nav-item">
+    <a href="/remove" class="nav-link">
+      <p>
+        Remove Question
+      </p>
+    </a>
+  </li>
+    <a href="/showall" class="nav-link">
+      <p>
+        Check All Results
+      </p>
+    </a>
+  </li>
+<li class="nav-item">
+    <a href="/logout" class="nav-link">
+      <p>
+        Logout
+      </p>
+    </a>
+  </li>
+{% endblock %}
